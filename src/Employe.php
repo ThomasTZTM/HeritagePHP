@@ -1,9 +1,10 @@
 <?php
+namespace App;
 class Employe
 {
-    private string $prenom;
-    private string $nom;
-    private int $age;
+    protected string $prenom;
+    protected string $nom;
+    protected int $age;
 
     public function __construct(string $prenom, string $nom, int $age){
         $this->prenom = $prenom;
@@ -39,6 +40,11 @@ class Employe
     public function setAge(int $age): void
     {
         $this->age = $age;
+    }
+
+    public function presenter(): void
+    {
+        dump("Bonjour, je m'appelle $this->nom $this->prenom et j'ai $this->age ans");
     }
 
 }
